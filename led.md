@@ -34,5 +34,20 @@ void loop() {
   delay(300);
 }
 ```
+## 3. Bật tắt bằng nút bấm
+```c
+#define LED_PIN 2
+#define BUTTON_PIN 4
+
+void setup() {
+  pinMode(LED_PIN, OUTPUT);
+  pinMode(BUTTON_PIN, INPUT_PULLUP); // Nút nối với GND, bật điện trở kéo lên
+}
+
+void loop() {
+  int state = digitalRead(BUTTON_PIN);
+  digitalWrite(LED_PIN, !state); // Bấm nút thì LED sáng
+}
+```
 
 
