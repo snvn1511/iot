@@ -18,4 +18,21 @@ void loop() {
  
 }
 ```
+## 2. Bật tắt bóng để cho bóng nhấp nháy
+```c
+#define LED_PIN 2
+
+void setup() {
+
+  pinMode(LED_PIN, OUTPUT);
+}
+
+void loop() {
+  digitalWrite(LED_PIN, HIGH); // bật bóng
+  delay(300);  // đợi 3s thì tắt
+  digitalWrite(LED_PIN, LOW); // tắt bóng
+  delay(300);
+}
+```
+
 
