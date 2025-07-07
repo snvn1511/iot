@@ -64,3 +64,23 @@ void loop() {
   }
 }
 ```
+## 4. Điều khiển bằng chiết áp xoay
+```c
+#include <ESP32Servo.h>
+
+Servo myservo;
+
+void setup() {
+  myservo.attach(13); //chân servo là chân 13
+}
+
+void loop() {
+  int sensorValue = analogRead(14); // Đọc từ 0 - 4095, chân chiết ap là 14
+  int angle = map(sensorValue, 0, 4095, 0, 180);
+  // hàm map này để khớp đối chiếu tỉ lệ dải từ 0->4095 của chiết áp sẽ tương ứng với góc từ 0->180 độ
+  myservo.write(angle);
+  delay(10); // check liên tục giá trị của chiết áp, 10 mini giây là ok.
+}
+```
+
+
